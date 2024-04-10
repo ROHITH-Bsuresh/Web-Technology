@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial,  sans-serif;
+}
+
+.navbar .navbar-brand{
+    font-size: 25px;
+    font-weight: 800;
+    color: blue !important;
+}
+#navbarSupportedContent a{
+    color: white;
+    border-bottom: 2px solid transparent;
+}
+#navbarSupportedContent a:hover{
+    border-bottom: 2px solid white;
+}
+#navbarSupportedContent button{
+    background: white;
+    width: 5rem;
+    border-radius: 15px;
+}
+#home{
+    width: 100%;
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    background: url(bg.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+#home h1{
+    padding: 8rem;
+    text-align: center;
+    align-items: top;
+    color: white;
+    font-size: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 3px;
+    text-shadow:0px 1px 0px white,
+}
+#about{
+    background-color: rgb(109, 167, 235);
+}
+#model{
+    background: #e5e5e5;
+}
+#model h1{
+    font-size: 50px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+.card{
+    background: #e5e5e5;
+    border: none !important;
+    box-shadow: 15px 20px 20px rgba(0,0,0,.3),
+                inset 4px 4px 10px white;
+    border-radius: 20px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+#contact{
+    height: 100%;
+    background-color: silver;
+}
+#contact input{
+    margin: 10px 0px;
+}
+#contact textarea{
+    margin: 10px 0px;
+}
+.btnin{
+    background-color: aqua;
+}
+
+

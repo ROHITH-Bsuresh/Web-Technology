@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      background-color: #ccc; /* Grey background color */
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Income Tax Calculator</h1>
+    <div class="row justify-content-center" >
+      <div class="col-md-6">
+
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" maxlength="35" class="form-control mb-3" placeholder="Enter your name" style="border: 2px solid #007bff;"required>
+        
+        <label for="panNumber" class="form-label">PAN Number:</label>
+        <input type="text" id="panNumber" maxlength="10" class="form-control mb-3" placeholder="Enter your PAN number" style="border: 2px solid #007bff;" required>
+
+        
+        <label for="salary" class="form-label">Salary:</label>
+        <input type="number" id="salary" class="form-control mb-3" placeholder="Enter salary" style="border: 2px solid #007bff;" required>
+        
+        <label for="rent" class="form-label">Rent:</label>
+        <input type="number" id="rent" class="form-control mb-3" placeholder="Enter rent income" style="border: 2px solid #007bff;"required>
+        
+        <label for="otherIncome" class="form-label">Other Income:</label>
+        <input type="number" id="otherIncome" class="form-control mb-3" placeholder="Enter other income" style="border: 2px solid #007bff;"required>
+        
+        <label for="lifeInsurance" class="form-label">Insurance:</label>
+        <input type="number" id="lifeInsurance" class="form-control mb-3" placeholder="Enter  insurance expense" style="border: 2px solid #007bff;"required>
+        
+        <label for="educationLoan" class="form-label">Tuition Fees:</label>
+        <input type="number" id="educationLoan" class="form-control mb-3" placeholder="Enter tuition fees expense" style="border: 2px solid #007bff;"required>
+        
+        <label for="homeLoan" class="form-label">Other Expense:</label>
+        <input type="number" id="homeLoan" class="form-control mb-3" placeholder="Enter other expense" style="border: 2px solid #007bff;"required>
+        
+        <button class="btn btn-primary mb-3" onclick="calculateTax()">Calculate Tax</button>
+
+        <div id="resultBox" class="result-box"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
