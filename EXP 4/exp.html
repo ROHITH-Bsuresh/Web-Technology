@@ -1,106 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>User Information Form</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <style>
+        .form-control {
+            border: 1px solid #0a0a0a;
+        }
+        .form-check {
+            padding-top: 0;
+        }
+        .form-check-input {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #007bff;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .form-check-input:checked {
+            background-color: #007bff;
+        }
+        .container {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+        }
+    </style>
+    
 </head>
 <body>
-
 <div class="container mt-5">
-    <h2>User Information Form</h2>
-
-    <form action="#" method="post" class="needs-validation" novalidate>
+    <h2 class="text-center">REGISTRATION FORM</h2>
+    <br>
+    <form id="userForm" class="needs-validation" novalidate>
         <table class="table">
             <tr>
                 <th><label for="name">Name:</label></th>
-                <td><input type="text" class="form-control" id="name" name="name" required></td>
+                <td><input type="text" class="form-control" id="name" name="name" placeholder="NAME" pattern="[A-Za-z ]+" required title="Only letters and spaces are allowed"></td>
             </tr>
             <tr>
+                <th><label for="address">Address:</label></th>
+                <td>
+                    <textarea class="form-control" id="address" name="address" placeholder="ADDRESS" required title="Address is required" rows="3"></textarea>
+                </td>
+            </tr>
+            
+            <tr> 
                 <th>Gender:</th>
                 <td>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                        <input type="radio" class="form-check-input" name="gender" id="male" value="male" required>
                         <label class="form-check-label" for="male">Male</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+                        <input type="radio" class="form-check-input" name="gender" id="female" value="female" required>
                         <label class="form-check-label" for="female">Female</label>
                     </div>
                 </td>
             </tr>
             <tr>
-                <th><label for="language">Language Known:</label></th>
+                <th><label>Language Known:</label></th>
                 <td>
-                    <select class="form-control" id="language" name="language" required>
-                        <option value="" disabled selected>Select Language</option>
-                        <option value="english">English</option>
-                        <option value="spanish">Spanish</option>
-                        <option value="french">French</option>
-                        <option value="german">German</option>
-                    </select>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="languageEnglish" name="language[]" value="English">
+                        <label class="form-check-label" for="languageEnglish">English</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="languageSpanish" name="language[]" value="Spanish">
+                        <label class="form-check-label" for="languageSpanish">Spanish</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="languageFrench" name="language[]" value="French">
+                        <label class="form-check-label" for="languageFrench">French</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="languageGerman" name="language[]" value="German">
+                        <label class="form-check-label" for="languageGerman">German</label>
+                    </div>
                 </td>
             </tr>
+            
             <tr>
                 <th><label for="district">Select District:</label></th>
                 <td>
                     <select class="form-control" id="district" name="district" required>
                         <option value="" disabled selected>Select District</option>
-                        <option value="district1">District 1</option>
-                        <option value="district2">District 2</option>
-                        <option value="district3">District 3</option>
-                        <option value="district4">District 4</option>
+                        <option value="ERODE">ERODE</option>
+                        <option value="COIMBATORE">COIMBATORE</option>
+                        <option value="CHENNAI">CHENNAI</option>
+                        <option value="SALEM">SALEM</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <th><label for="email">Email:</label></th>
-                <td><input type="email" class="form-control" id="email" name="email" required></td>
+                <td><input type="email" class="form-control" id="email" name="email" placeholder="EMAIL" required></td>
             </tr>
             <tr>
                 <th><label for="phone">Phone No:</label></th>
-                <td><input type="tel" class="form-control" id="phone" name="phone" required></td>
+                <td><input type="tel" class="form-control" id="phone" name="phone" placeholder="PHONE NO" pattern="^\d{10}$" required title="Please enter a valid phone number with exactly 10 digits"></td>
             </tr>
             <tr>
                 <th><label for="username">Username:</label></th>
-                <td><input type="text" class="form-control" id="username" name="username" required></td>
+                <td><input type="text" class="form-control" id="username" name="username" placeholder="USERNAME" pattern="\w+" required title="Username must consist of letters, numbers, or underscores only"></td>
             </tr>
             <tr>
                 <th><label for="password">Password:</label></th>
-                <td><input type="password" class="form-control" id="password" name="password" required></td>
+                <td><input type="password" class="form-control" id="password" name="password" placeholder="PASSWORD" minlength="8" required title="Password must be at least 8 characters long"></td>
             </tr>
         </table>
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
     </form>
 </div>
-
 <script>
-// Bootstrap validation script
-(function () {
-  'use strict'
+    document.getElementById('userForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
+        let formData = new FormData(this);
+        let name = formData.get('name');
+        let address = formData.get('address');
+        let email = formData.get('email');
+        let phone = formData.get('phone');
+        let username = formData.get('username');
+        let password = formData.get('password');
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
+        let nameRegex = /^[A-Za-z ]+$/;
+        let addressRegex = /^[A-Za-z0-9\s]+$/;
+        let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        let phoneRegex = /^\d{10}$/;
+        let usernameRegex = /^\w+$/;
+        let passwordRegex = /^.{8,}$/;
+
+        if (!nameRegex.test(name)) {
+            alert('Name must contain only letters and spaces.');
+            return;
+        }
+        if (!addressRegex.test(address)) {
+            alert('Please enter a valid address.');
+            return;
+        }
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        if (!phoneRegex.test(phone)) {
+            alert('Phone number must contain exactly 10 digits.');
+            return;
+       }   
+        if (!usernameRegex.test(username)) {
+            alert('Username must contain only letters, numbers, or underscores.');
+            return;
+        }
+        if (!passwordRegex.test(password)) {
+            alert('Password must be at least 8 characters long.');
+            return;
         }
 
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
+        alert('Form is successfully submitted.'); 
+        this.submit(); 
+    });
 </script>
+
 
 </body>
 </html>
