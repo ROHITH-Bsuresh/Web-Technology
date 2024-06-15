@@ -1,0 +1,30 @@
+/* src/app/app.component.css */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar .nav-link {
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 4px;
+    margin: 0 10px;
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+  
+  .navbar .nav-link:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+  }
+  
+  .navbar .nav-link.active {
+    background-color: #007bff;
+  }
+  

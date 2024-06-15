@@ -66,7 +66,8 @@ function onRequest(req, res) {
         </tr>
         <tr>
           <td>Gender</td>
-          <td>${gender}</td>
+          <td>$
+          {gender}</td>
         </tr>
         <tr>
           <td>Branch Address</td>

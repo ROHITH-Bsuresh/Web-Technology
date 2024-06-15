@@ -1,0 +1,71 @@
+/* src/app/product-list/product-list.component.css */
+.tv-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px; /* Add padding around the entire tv list */
+    background-color: #f8f9fa;
+  }
+  
+  .tv-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    width: calc(20% - 40px); /* Adjust to display 5 tvs per row */
+    box-sizing: border-box;
+    text-align: center;
+    margin: 10px; /* Add margin for spacing */
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  }
+  
+  .tv-card:hover {
+    transform: translateY(-8px); /* Lift the card slightly */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhance the shadow */
+  }
+  
+  .tv-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 16px; /* Space between image and text */
+    transition: transform 0.3s; /* Smooth transition for image hover effect */
+  }
+  
+  .tv-card:hover .tv-image {
+    transform: scale(1.05); /* Slightly zoom in on the image */
+  }
+  
+  .tv-card h2 {
+    font-size: 1.6em;
+    margin: 10px 0;
+    color: #333; /* Slightly darker text color */
+    font-weight: 600; /* Bolder text */
+  }
+  
+  .tv-card p {
+    margin: 8px 0;
+    color: #666; /* Subtle text color for description and price */
+    font-size: 1.1em; /* Increase font size slightly */
+  }
+  
+  .tv-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .tv-card button:hover {
+    background-color: #0056b3; /* Darker shade for hover state */
+    transform: translateY(-3px); /* Lift the button slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhance the shadow */
+  }
+  
