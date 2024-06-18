@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: rgb(13, 13, 13);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+        .container {
+            padding: 50px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 900px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .images-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .image-box {
+            width: 220px;
+            height: 220px;
+            margin: 10px;
+            background-color: transparent; /* Set background color to transparent */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .image-box:hover {
+            transform: scale(1.05);
+        }
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 400px; /* Reduced height */
+        }
+        .slideshow-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+        }
+        /* Hide all images by default */
+        .slideshow-container img {
+            display: none;
+        }
+        /* Show the first image */
+        .slideshow-container img:first-child {
+            display: block;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 3s;
+        }
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> SONY</h1>
+        <p>Welcome to Sony! Sony offers a wide range of high-quality TVs with cutting-edge technology and innovative features.</p>
+        <p>Sony TVs are known for their stunning picture quality, vibrant colors, and immersive viewing experience. Whether you're watching movies, gaming, or enjoying your favorite shows, Sony TVs deliver exceptional performance.</p>
+        <p>With advanced features like 4K resolution, HDR support, smart TV capabilities, and sleek designs, Sony continues to set the standard for home entertainment.</p>
+    </div>
+    <div class="slideshow-container">
+        <img class="fade" src="pic1.jpeg" alt="Image 1">
+        <img class="fade" src="pic2.jpeg" alt="Image 2">
+        <img class="fade" src="pic3.jpeg" alt="Image 3">
+        <!-- Add more images here -->
+    </div>
+    <div class="images-container">
+        <div class="image-box">
+            <img src="pic4.jpeg" alt="Image 1">
+        </div>
+        <div class="image-box">
+            <img src="pic5.jpeg" alt="Image 2">
+        </div>
+        <div class="image-box">
+            <img src="pic6.jpeg" alt="Image 3">
+        </div>
+        <div class="image-box">
+            <img src="pic7.jpeg" alt="Image 4">
+        </div>
+        <div class="image-box">
+            <img src="pic8.jpeg" alt="Image 5">
+        </div>
+        <div class="image-box">
+            <img src="pic9.jpeg" alt="Image 6">
+        </div>
+        <div class="image-box">
+            <img src="pic10.jpeg" alt="Image 7">
+        </div>
+        <div class="image-box">
+            <img src="pic11.jpeg" alt="Image 8">
+        </div>
+    </div>
+    <script>
+        // JavaScript for the slideshow
+        let slideIndex = 0;
+        const images = document.querySelectorAll('.fade');
+
+        function showSlides() {
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.display = 'none';
+            }
+            slideIndex++;
+            if (slideIndex > images.length) {
+                slideIndex = 1;
+            }
+            images[slideIndex - 1].style.display = 'block';
+            setTimeout(showSlides, 3000); // Change image every 3 seconds (adjust as needed)
+        }
+
+        showSlides(); // Initial call to start the slideshow
+    </script>
+</body>
+</html>

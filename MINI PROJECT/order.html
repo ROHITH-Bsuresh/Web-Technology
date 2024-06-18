@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TV Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg1.jpg');
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background-image: url('bg1.jpg');
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #fcfbfb;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #fcfcfc;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        input[type="submit"],
+        button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 48%;
+            margin: 1%;
+            box-sizing: border-box;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #0056b3;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form" method="post">
+        <h1>ORDER</h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" required>
+
+        <label for="tv_option">TV Options:</label>
+        <select id="tv_option" name="tv_option" required>
+            <option value="OLED">OLED</option>
+            <option value="CURVE">CURVE</option>
+            <option value="UHD">UHD</option>
+        </select>
+
+        <label for="warranty_start_date">Warranty Start Date:</label>
+        <input type="date" id="warranty_start_date" name="warranty_start_date" required>
+
+        <label for="warranty_end_date">Warranty End Date:</label>
+        <input type="date" id="warranty_end_date" name="warranty_end_date" required>
+
+        <div class="button-container">
+            <button type="button" onclick="setAction('/insert')">SUBMIT</button>
+            <button type="button" onclick="setAction('/delete')">DELETE</button>
+        </div>
+        <div class="button-container">
+            <button type="button" onclick="setAction('/update')">UPDATE</button>
+            <button type="button" onclick="setAction('/display')">VIEW</button>
+        </div>
+    </form>
+
+    <script>
+        function setAction(path) {
+            const form = document.getElementById('form');
+            form.setAttribute('action', 'http://localhost:8099' + path);
+            form.setAttribute('method', 'POST');
+            form.submit();
+        }
+    </script>
+</body>
+</html>
